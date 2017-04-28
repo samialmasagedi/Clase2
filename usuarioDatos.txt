@@ -1,4 +1,4 @@
-	public ENTITIES.USUARIO obtenerUsuarioNegocio(String id){
+	public ENTITIES.USUARIO obtenerUsuarioNegocio(String nombreUsuario){
 	
 		Entidad.CursoNetEntities dc = null;
         	Entidad.Usuarios usuario = null;
@@ -6,7 +6,7 @@
 	        try{
 
 			// obtenemos la información del usuario con base en el parámetro nombreUsuario
-			data = new Entidad.CursoNetEntities();
+			dc = new Entidad.CursoNetEntities();
 			usuario = dc.Usuarios.Where(u => u.login == nombreUsuario).FirstOrDefault();
 		
 		}
@@ -15,4 +15,4 @@
 		} // fin del try
 
 		return usuario;
-	} // fin del método obtenerUsuario
+	} // fin del método obtenerUsuarioNegocio
